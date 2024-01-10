@@ -1,0 +1,168 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Almendra+Display&family=Foldit:wght@100;200;300;400;500;600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #02007c; */
+  background-image: url("image/resim2.jpg");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(5px);
+  user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -khtml-user-select: none; /* Konqueror */
+  /* pointer-events: none; CSS3 */
+}
+.endiskatman {
+  position: relative;
+  max-width: 420px;
+  width: 120%;
+  border-radius: 20px;
+  padding: 25px 25px;
+  background: rgba(0, 0, 0, 0.5);
+  height: 620px;
+  /* text-align: center; */
+}
+.container {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 15px 25px 25px;
+  background: #fff;
+  height: 550px;
+  margin: auto;
+}
+header {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.input_field {
+  position: relative;
+  height: 50px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.audioButton {
+  left: 10px;
+}
+
+.audioButton,
+.refresh_button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: #02007c;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.audioButton:hover,
+.refresh_button:hover {
+  opacity: 0.7;
+}
+
+.audioButton:active,
+.refresh_button:active {
+  transform: translateY(-50%) scale(0.98);
+}
+.input_field input,
+.button button {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+}
+.input_field input {
+  padding: 0 15px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+.captch_box input {
+  color: #6b6b6b;
+  font-size: 23px;
+  pointer-events: none;
+}
+.captch_input input:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+.message {
+  font-size: 12px;
+  margin: 0px 30px;
+  color: #02007c;
+  display: none;
+}
+.message.active {
+  display: block;
+  margin-top: -20px;
+}
+.button button {
+  background: red;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+.button button:hover {
+  background-color: black;
+}
+.button button:active {
+  transform: scale(0.99);
+}
+/* .button.disabled {
+  opacity: 0.9;
+  pointer-events: none;
+} */
+
+.input_field {
+  margin-bottom: 30px;
+}
+
+.input_field.captch_box {
+  margin-bottom: 10px;
+}
+
+.email_input input {
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.captcha-text {
+  /* font-family: "Almendra Display", serif;
+  font-family: "Foldit", sans-serif;
+  font-weight: 800; */
+  font-family: "Rubik Glitch", system-ui;
+  text-decoration:line-through;
+}
+
+.yaziyazdigimizyer {
+  user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -khtml-user-select: none; /* Konqueror */
+  pointer-events: none; /* CSS3 */
+}
