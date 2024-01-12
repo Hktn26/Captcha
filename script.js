@@ -1,4 +1,3 @@
-// Selecting necessary DOM elements
 const captchaTextBox = document.querySelector(".captch_box input");
 const refreshButton = document.querySelector(".refresh_button");
 const audioButton = document.querySelector(".audioButton");
@@ -11,11 +10,8 @@ let usernameInput = document.querySelector(".username_input input");
 let passwordInput = document.querySelector(".password_input input");
 let emailInput = document.querySelector(".email_input input");
 
-// Variable to store generated captcha
 let captchaText = null;
-// const captchaText = "Secure Captcha Text";
 
-// Function to speak captcha text
 const speakCaptchaText = () => {
   if ("speechSynthesis" in window) {
     const msg = new SpeechSynthesisUtterance(captchaText.split(" ").join(" "));
@@ -26,13 +22,12 @@ const speakCaptchaText = () => {
       msg.rate = 0.4;
       window.speechSynthesis.speak(msg);
     } else {
-      console.log("Turkish voice not found.");
+      console.log("Türkçe sesi bunu desteklemiyor");
     }
   } else {
-    console.log("Your browser does not support text-to-speech.");
+    console.log("Tarayıcınız bunu desteklemiyor.");
   }
 };
-
 
 const generateCaptcha = () => {
   const randomString = Math.random().toString(36).substring(2, 9);
@@ -46,6 +41,8 @@ const generateCaptcha = () => {
   captchaTextBox.classList.add("captcha-text");
   console.log(captchaText);
 };
+
+setInterval(generateCaptcha, 20000);
 
 function verifyInput() {
   if (inputField.value.toLowerCase() === captcha.text.toLowerCase()) {
@@ -74,25 +71,21 @@ const refreshBtnClick = () => {
 };
 
 const captchaKeyUpValidate = () => {
-  //Toggle submit button disable class based on captcha input field.
   submitButton.classList.toggle("disabled", !captchaInputBox.value);
 
   if (!captchaInputBox.value) message.classList.remove("active");
 };
 
-// Function to validate the entered captcha
 const submitBtnClick = () => {
   captchaText = captchaText
     .split("")
     .filter((char) => char !== " ")
     .join("");
   message.classList.add("active");
-  // Check if the entered captcha text is correct or not
   if (captchaInputBox.value === captchaText) {
     message.innerText = "Girilen captcha doğrudur.";
     message.style.color = "#0A9900";
     message.style.fontWeight = "bold";
-
     setTimeout(() => {
       window.location.href = "index2.html";
     }, 1000);
@@ -103,7 +96,7 @@ const submitBtnClick = () => {
   }
 };
 
-// Add event listeners for the refresh button, captchaInputBox, submit button
+
 refreshButton.addEventListener("click", refreshBtnClick);
 captchaInputBox.addEventListener("keyup", captchaKeyUpValidate);
 submitButton.addEventListener("click", submitBtnClick);
@@ -114,5 +107,5 @@ usernameInput.addEventListener("input", verifyInput);
 passwordInput.addEventListener("input", verifyInput);
 emailInput.addEventListener("input", verifyInput);
 
-// Generate a captcha when the page loads
+// Sayfa her yuklendiginde tekrardan captcha sifreli metni veriyor
 generateCaptcha();
